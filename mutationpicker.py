@@ -18,7 +18,7 @@ max = 5
 min = -5
 mean = 0
 stdev = 2
-rate = 3
+rate = 10
 
 
 pointrange = [i for i in range(min,max+1)]
