@@ -11,11 +11,16 @@ mutantcategories = ["Alpha", "Frog", "Beast", "Bird", "Cattle", "Cephalopod", "C
 
 focus_category = "Feline"
 focus_weight = 30
+
+#MUTATION VARS
 stdev = 2
 max = 5
 min = -5
 mean = 0
 stdev = 2
+rate = 3
+
+
 pointrange = [i for i in range(min,max+1)]
 current_name = ""
 stage = "Pre-Threshold"
@@ -36,6 +41,6 @@ for index, row in df.iterrows():
                     for i in range(focus_weight):
                         mutation_options.append(row[0])
 
-
-rand_mutation = random.randint(0,len(mutation_options))
-print(mutation_options[rand_mutation])
+for i in range(rate):
+    rand_mutation = random.randint(0,len(mutation_options))
+    print(mutation_options[rand_mutation])
