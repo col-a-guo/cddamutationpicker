@@ -10,7 +10,7 @@ mutantcategories = ["Alpha", "Frog", "Beast", "Bird", "Cattle", "Cephalopod", "C
 #null is mycus
 
 focus_category = "Feline"
-focus_weight = 8
+focus_weight = 30
 stdev = 2
 max = 5
 min = -5
@@ -32,7 +32,7 @@ for index, row in df.iterrows():
             if abs(rand-int(row[1])) < 0.5:
                 mutation_options.append(row[0])
                 if current_name == focus_category:
-                    print("focused!")
+                    print("focused: "+ row[0])
                     for i in range(focus_weight):
                         mutation_options.append(row[0])
 
