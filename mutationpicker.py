@@ -23,7 +23,8 @@ min = -5
 mean = 0
 stdev = 2
 rate = 10
-if not (character in char_mutations["Character"]):
+
+if not character in char_mutations["Character"].values:
     char_mutations = char_mutations.append({"Character":character, "Mutations":["Human"]}, ignore_index=True)
 
 if type(char_mutations.loc[char_mutations['Character'] == character]["Mutations"].iat[0]) == str:
