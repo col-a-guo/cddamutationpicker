@@ -64,15 +64,23 @@ for index, row in df.iterrows():
                     print("focused: "+ row[0])
                     for i in range(focus_weight):
                         mutation_options.append(row[0])
-current_list = char_mutations.loc[char_mutations['Character'] == character]["Mutations"].iat[0]
+            
+current_list = char_mutations.loc[char_mutations['Character'] == character]["Mutations"].iat[0]     
 if type(current_list) == str:
     current_list = ast.literal_eval(current_list)
+       
 for i in range(rate):   
-    rand_mutation = random.randint(0,len(mutation_options))
+    rand_mutation = random.randint(0,len(mutation_options)-1)
     if mutation_options[rand_mutation] not in current_list:
+        print("appending "+str(mutation_options[rand_mutation]))
         current_list.append(mutation_options[rand_mutation])
 
-char_mutations.loc[char_mutations['Character'] == character]["Mutations"].iat[0] = current_list
+current_list[0] = "banana"
+
+sub_df = char_mutations.loc[char_mutations['Character'] == character]["Mutations"].copy()
+sub_df.iloc[0] = current_list
+
+char_mutations.loc[char_mutations['Character'] == character, "Mutations"] = sub_df
 print(char_mutations)
 
-char_mutations.to_csv("charmutations.csv",index=False)
+char_mutations.to_csv("charmutations.csv", index=False)
