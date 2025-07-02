@@ -8,25 +8,25 @@ import sys
 char_mutations = pd.read_csv("charmutations.csv")
 df = pd.read_csv("cddamutations.csv")
 
-char_id = int(sys.argv[1])
+char_id = 5
 
 mutantcategories = ["Alpha", "Frog", "Beast", "Bird", "Cattle", "Cephalopod", "Chimera", "Chiropteran", "Crustacean", 
                     "Elf-A", "Feline", "Fish", "Snail", "Insect", "Lizard", "Lupine", "Medical", "Mouse", "null", "Plant", 
                     "Rabbit", "Raptor", "Rat", "Slime", "Spider", "Trogolobite", "Ursine"]
 
-char_names = ["Mal", "Imriska", "Anatoli", "Dr. Michael", "Father Aimen", "Judith Foster", "Dummy"]
-char_categories = [["Fish", "Medical", "Slime", "null", "Plant"], ["Alpha"], ["Feline"], ["Cattle", "Bird", "Medical"], ["Chiropteran", "Lizard"], ["Lizard"], ["Lizard"]]
-char_stdev = [2.5, 0.5, 0.5, 1, 1, 2, 3]
-char_max = [7, 3, 3, 4, 3, 7, 7]
-char_min = [-4, -2, -2, -3, -3, -3, -7]
-char_mean = [0.5, 0, 0, 0, 0.5, 1.5, 0]
-char_rate = [20, 1, 1, 1, 3, 7, 200]
+char_names = "Mal", "Imriska", "Anatoli", "Dr. Michael", "Father Aimen", "Judith Foster", "Dummy"
+char_categories = [["Fish", "Medical", "Slime", "null", "Plant"], ["Alpha", "Spider"], ["Feline"], ["Elf-A"], ["Elf-A"], ["Raptor", "Raptor", "Raptor"], ["Lizard"]]
+char_stdev = [2.5, 0.5, 0.5, 1, 1, 2.5, 3]
+char_max = [7, 3, 3, 4, 8, 9, 7]
+char_min = [-4, -2, -2, -8, -3, -4, -7]
+char_mean = [0.5, 0, 0, 0.5, 0.5, 2, 0]
+char_rate = [10, 2, 4, 4, 4, 6, 20]
 #null is mycus
 
 #CHARACTER VARS
 focus_categories = char_categories[char_id]
 character = char_names[char_id]
-focus_weight = 20
+focus_weight = 200
 
 #MUTATION VARS
 stdev = char_stdev[char_id]
