@@ -5,15 +5,20 @@ def solution():
     target_dictionary = {}
     for target in final_target_list:
         target_dictionary[target] = 0
-    sol_string = ""
-    for i in range(100):
+    sol_string = "00"
+    target_dictionary["00"] = 1
+    for i in range(1,100):
+        print(sol_string)
         default_target = final_target_list[i]
-        if sol_string[-2:-1] == default_target[0]:
+        if sol_string[-2:-1] == default_target:
             pass
         elif sol_string[-1] == default_target[0]:
             sol_string += default_target[1]
         else:
             sol_string += default_target
+        if len(sol_string)>97:
+            print(len(sol_string))
+            break
     print(sol_string)
     return(sol_string)
 
