@@ -1,5 +1,5 @@
-a = [1,2,5,3,12,1,5,2,2]
-r = 5
+a = [1,1000,1]
+r = 3
 warehouse_list = a 
 shelves_to_remove = r
 shelf_list = a
@@ -27,10 +27,14 @@ for i in range(warehouse_size-shelves_to_remove):
     item_type_dictionary[str(warehouse_list[i])] += 1
     if item_type_dictionary[str(warehouse_list[i])] == 1:
         total_item_types += 1
-    item_type_dictionary[str(warehouse_list[i+shelves_to_remove]))] -= 1
-    if item_type_dictionary[str(warehouse_list[i+shelves_to_remove]))] == 0:
+    
+    item_type_dictionary[str(warehouse_list[i+shelves_to_remove])] -= 1
+
+    if item_type_dictionary[str(warehouse_list[i+shelves_to_remove])] == 0:
         total_item_types -= 1
 
     if best_item_types < total_item_types:
         best_item_types = total_item_types
+
+print(best_item_types)
 
